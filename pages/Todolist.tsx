@@ -30,10 +30,9 @@ export const Todolist: React.FC = () => {
   };
 
   const handleDeleteClick = (id: number) => {
-    const removeItem = todos.filter((todo) => {
-      return todo.id !== id;
+    setTodos((ob) => {
+      return ob.filter((todo) => todo.id !== id);
     });
-    setTodos(removeItem);
   };
 
   return (
@@ -41,8 +40,9 @@ export const Todolist: React.FC = () => {
       <h1>Todolist</h1>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id} onClick={() => handleToggle(todo.id)}>
+          <li key={todo.id}>
             {todo.text}{" "}
+            <button onClick={() => handleToggle(todo.id)}>toggle</button>{" "}
             <button onClick={() => handleDeleteClick(todo.id)}>delete</button>
           </li>
         ))}
