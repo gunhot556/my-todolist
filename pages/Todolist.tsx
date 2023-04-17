@@ -41,8 +41,7 @@ export const Todolist: React.FC = () => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.text}{" "}
-            <button onClick={() => handleToggle(todo.id)}>toggle</button>{" "}
+            {todo.text} <button onClick={() => handleToggle(todo.id)}>toggle</button>{" "}
             <button onClick={() => handleDeleteClick(todo.id)}>delete</button>
           </li>
         ))}

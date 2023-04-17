@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { Todolist } from "./Todolist";
+import { Todolist } from "./todoList";
 
 function App() {
   return (
